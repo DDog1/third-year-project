@@ -24,6 +24,7 @@ class User extends DatabaseTable
     }
 
     /**
+     * Set the id of the user
      * @param mixed $id
      */
     public function setId($id)
