@@ -1,0 +1,42 @@
+{% extends '_base.html.twig' %}
+{% block main %}
+
+<div id="input_left" style="width: 30%;">
+    <h1>Update List</h1>
+
+    <form
+            action="/processUpdateAction"
+            method="post"
+    >
+
+
+        <label for="id">id:</label>
+        <input type="text" title="id" name="id" autofocus>
+        <br>
+
+        <label for="description" class="space">description:</label>
+        <textarea title="description"  name="description"></textarea>
+        <!--<input type="text" name="description">-->
+        <br>
+
+        <label for="implementorid" class="space">implementorid:</label>
+        <input type="text" title="implementorid" name="implementorid">
+        <br>
+
+        <label for="deadline" class="space">deadline:</label>
+        <input type="date" title="deadline" name="deadline">
+        <br>
+
+        <label for="status" class="space">status:</label>
+        <input type="text" title="status" name="status">
+        <br>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+
+    </form>
+</div>
+    <div id="input_left" style="width: 70%;">
+{% include 'actionList.html.twig' %}
+    </div>
+{% endblock %}

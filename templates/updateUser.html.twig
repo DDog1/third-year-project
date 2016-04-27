@@ -1,0 +1,40 @@
+{% extends '_base.html.twig' %}
+{% block main %}
+
+<div id="input_left">
+    <h1>Update User</h1>
+
+    <form
+            action="/processUpdateUser"
+            method="post"
+    >
+
+        <label for="id">id:</label>
+        <input type="text" title="id" name="id" autofocus>
+        <br>
+
+        <label for="username" class="space">username:</label>
+        <input type="text" title="username" name="username">
+        <br>
+
+        <label for="password" class="space">password:</label>
+        <input type="password" title="password" name="password">
+        <br>
+
+        <label for="retypePassword" class="space">re password:</label>
+        <input type="password" title="retypePassword" name="retypePassword">
+        <br>
+
+        <label for="role" class="space">role:</label>
+        <input type="text" title="role" name="role">
+        <br>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+
+    </form>
+</div>
+    <div id="display_right">
+{% include 'userList.html.twig' %}
+    </div>
+{% endblock %}

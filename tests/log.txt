@@ -1,0 +1,16 @@
+TAP version 13
+ok 1 - Itb\Test::testToSeeIfTestFileIsSetUpRight
+ok 2 - Itb\actionTest::testGetId
+ok 3 - Itb\actionTest::testGetDescription
+ok 4 - Itb\actionTest::testGetImplementorId
+ok 5 - Itb\actionTest::testGetDeadLine
+ok 6 - Itb\actionTest::testGetStatus
+ok 7 - Itb\publicationTest::testGetId
+ok 8 - Itb\publicationTest::testGetTitle
+ok 9 - Itb\publicationTest::testGetAuthorId
+ok 10 - Itb\publicationTest::testGetUrl
+ok 11 - Itb\userTest::testGetUserId
+ok 12 - Itb\userTest::testGetUsername
+ok 13 - Itb\userTest::testGetPassword
+ok 14 - Itb\userTest::testGetRole
+1..14

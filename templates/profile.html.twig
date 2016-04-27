@@ -1,0 +1,24 @@
+{% extends '_base.html.twig' %}
+
+{% block main %}
+    <div>
+        <div>
+            <h1>{{ user.username }}s profile</h1>
+        </div>
+        {{ loggedIn }}
+        {% if user.username != "" %}
+            <div style="clear: both;">
+                <button style="float: right;margin-top: -30px;" onclick="window.location.href='/user/{{ user.username }}/edit'">Edit Profile</button>
+            </div>
+        {% endif %}
+        <div id="input_left">
+            <p>
+                Users description goes here
+            </p>
+            <p>taking part in project : </p>
+        </div>
+        <div id="display_right">
+            <img src="/images/profile/spaceinvader_green.jpe{#{{ user.username }}#}" alt="pic of {{ user.username }}" style="color: greenyellow;" width="200">
+        </div>
+    </div>
+{% endblock %}

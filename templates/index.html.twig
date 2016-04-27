@@ -1,0 +1,31 @@
+{% extends '_base.html.twig' %}
+
+{% block main %}
+    {% if logout %}
+    <p>{{ logout }}</p>
+        <br>
+{% endif %}
+    <h1>Login</h1>
+    <form
+            action="/login"
+            method="post"
+    >
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" title="username" name="username" autofocus>
+        </div>
+
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" title="password" name="password">
+        </div>
+
+        <div>
+            <input type="submit" value="login">
+            <input type="reset" value="Reset">
+        </div>
+    </form>
+
+    <a href="/register">Register now! :D</a>
+{% endblock %}
+

@@ -1,0 +1,21 @@
+{% block main %}
+    <table>
+        <tr>
+            <th>id</th>
+            <th>description</th>
+            <th>implementor Id</th>
+            <th>deadline</th>
+            <th>status</th>
+        </tr>
+
+        {% for action in actions %}
+            <tr>
+                <td>{{ action.id }}</td>
+                <td>{{ action.description }}</td>
+                <td>{{ action.implementorId }}</td>
+                <td>{{ action.deadline }}</td>
+                <td>{{ action.getStatus }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

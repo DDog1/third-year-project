@@ -1,0 +1,17 @@
+{% block main %}
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Username</th>
+            <th>Role</th>
+        </tr>
+
+        {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td><a href="/user/{{ user.username }}">{{ user.username }}</a></td>
+                <td>{{ user.role }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

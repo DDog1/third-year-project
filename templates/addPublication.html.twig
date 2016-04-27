@@ -1,0 +1,33 @@
+{% extends '_base.html.twig' %}
+{% block main %}
+
+    <div id="input_left" style="width: 30%;">
+        <h1>Add Publication</h1>
+
+        <form
+                action="/processAddPublication"
+                method="post"
+        >
+
+            <label for="title">title:</label>
+            <input type="text" title="title" name="title" autofocus>
+            <!--<textarea title="text"  name="title" autofocus></textarea>-->
+            <br>
+
+            <label for="authorId" class="space">author Id:</label>
+            <input type="text" title="authorId" name="authorId">
+            <br>
+
+            <label for="url" class="space">url:</label>
+            <input type="text" title="url" name="url">
+            <br>
+
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+
+        </form>
+    </div>
+    <div id="display_right" style="width: 70%;">
+{% include 'publicationList.html.twig' %}
+    </div>
+{% endblock %}

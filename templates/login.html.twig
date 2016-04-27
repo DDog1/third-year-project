@@ -1,0 +1,9 @@
+{% extends '_base.html.twig' %}
+
+{% block main %}
+    <p>Welcome {{ username }}</p>
+
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+{% endblock %}

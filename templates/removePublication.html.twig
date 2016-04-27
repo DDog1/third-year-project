@@ -1,0 +1,24 @@
+{% extends '_base.html.twig' %}
+{% block main %}
+
+<div id="input_left" style="width: 30%;">
+    <h1>Remove List</h1>
+
+    <form
+            action="/processRemovePublication"
+            method="post"
+    >
+
+        <label for="id">id:</label>
+        <input type="text" title="id" name="id" autofocus>
+        <br>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+
+    </form>
+</div>
+    <div id="display_right" style="width: 70%;">
+{% include 'publicationList.html.twig' %}
+    </div>
+{% endblock %}

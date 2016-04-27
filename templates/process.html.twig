@@ -1,0 +1,38 @@
+{% extends '_base.html.twig' %}
+
+{% block main %}
+    <h1>Process {{ successType }}</h1>
+
+    <p>{{ message }}</p>
+    {# Success links back to user CRUD#}
+    {% if successType == "add User" %}
+        <a href="/addUser">Add another user?</a>
+
+    {% elseif successType == "remove User" %}
+        <a href="/removeUser">Remove another user?</a>
+
+    {% elseif successType == "update User" %}
+        <a href="/updateUser">Update another user?</a>
+
+    {# Success links back to list CRUD#}
+    {% elseif successType == "add list" %}
+        <a href="/addAction">Add another list?</a>
+
+    {% elseif successType == "remove list" %}
+        <a href="/removeAction">Remove another list?</a>
+
+    {% elseif successType == "update list" %}
+        <a href="/updateAction">Update another list?</a>
+
+    {# Success links back to list CRUD#}
+    {% elseif successType == "add Publication" %}
+        <a href="/addPublication">Add another publication?</a>
+
+    {% elseif successType == "remove Publication" %}
+        <a href="/removePublication">Remove another publication?</a>
+
+    {% elseif successType == "update Publication" %}
+        <a href="/updatePublication">Update another publication?</a>
+
+    {%  endif %}
+{% endblock %}

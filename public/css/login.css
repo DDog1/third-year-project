@@ -1,0 +1,61 @@
+label{
+    font-weight:bold;
+    color: #73F104;
+}
+
+label, input[type="text"],input[type="password"],input[type="date"],textarea{
+    float:left;
+    display:block;
+    width: 114px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+
+}
+
+input[type="text"],input[type="password"],input[type="date"],textarea{
+    width: 150px;
+    border: 2px solid #73F104;
+    color: #73F104;
+    text-align: center;
+    background-color: black;
+}
+br{
+    clear:left;
+}
+
+form{
+    width: 160px;
+    padding:10px;
+    margin: auto;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+input[type="submit"], input[type="reset"]{
+    margin-top:10px;
+    font-weight: bold;
+    border: none;
+    background: #73F104;
+    padding-left: 10%;
+    padding-right:10%;
+    border-radius: 10px;
+    cursor: pointer;
+    color:white;
+}
+
+input:hover {
+    color: red;
+    background-color: white;
+    text-decoration: none;
+}
+
+input:focus,textarea:focus{
+    color: red;
+    background-color: white;
+    text-decoration: none;
+}
+
+.space{
+    margin-top: 10px;
+}

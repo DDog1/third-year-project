@@ -1,0 +1,19 @@
+{% block main %}
+    <table>
+        <tr>
+            <th>id</th>
+            <th>title</th>
+            <th>author Id</th>
+            <th>url</th>
+        </tr>
+
+        {% for publication in publications %}
+            <tr>
+                <td>{{ publication.id }}</td>
+                <td>{{ publication.title }}</td>
+                <td>{{ publication.authorId }}</td>
+                <td><a href="{{ publication.url }}">{{ publication.url }}</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

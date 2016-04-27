@@ -1,0 +1,19 @@
+table{
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    text-align: center;
+}
+
+th{
+    color: #FFFFFF;
+}
+td{
+    color: #73F104;
+}
+
+table,td,th {
+    border: .1rem solid red;
+    padding: .1rem;
+}

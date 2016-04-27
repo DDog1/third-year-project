@@ -1,0 +1,53 @@
+{% extends '_base.html.twig' %}
+
+{% block main %}
+    <h1>Whoops!</h1>
+
+    <p class="error">
+        {{ message }}
+
+        {% if message2 %}
+            <br>
+            {{ message2 }}
+        {% endif %}
+    </p>
+    {% if errorType == "login" %}
+        <a href="/">Back to home page</a>
+
+    {% elseif errorType == "notLoggedIn" %}
+        <a href="/">Back to login</a>
+
+    {% elseif errorType == "register" %}
+        <a href="/register">Back to add user</a>
+
+    {# Error links back to list CRUD#}
+    {% elseif errorType == "addUser" %}
+        <a href="/addUser">Back to add user</a>
+
+    {% elseif errorType == "removeUser" %}
+        <a href="/removeUser">Back to remove user</a>
+
+    {% elseif errorType == "updateUser" %}
+        <a href="/updateUser">Back to update user</a>
+
+    {# Error links back to action CRUD#}
+    {% elseif errorType == "addAction" %}
+        <a href="/addAction">Back to add list</a>
+
+    {% elseif errorType == "removeAction" %}
+        <a href="/removeAction">Back to remove list</a>
+
+    {% elseif errorType == "updateAction" %}
+        <a href="/updateAction">Back to update list</a>
+
+    {# Error links back to publication CRUD#}
+    {% elseif errorType == "addPublication" %}
+        <a href="/addPublication">Back to add publication</a>
+
+    {% elseif errorType == "removePublication" %}
+        <a href="/removePublication">Back to remove publication</a>
+
+    {% elseif errorType == "updatePublication" %}
+        <a href="/updatePublication">Back to update publication</a>
+    {% endif %}
+{% endblock %}

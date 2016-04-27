@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/ico" href="images/spaceinvader_blue.jpe">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/table.css">
+    <link rel="stylesheet" type="text/css" href="/css/login.css">
+    <title>Project</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <hr>
+    <img src="/images/spaceinvader_blue.jpe" width="50" height="50"> <!--id="image_left"-->
+    <h1>Project Group 3</h1>
+    <img src="/images/spaceinvader_blue.jpe" width="50" height="50"> <!--id="image_right"-->
+
+    <br>
+    <a href="/killSession">KILL SESSION</a>
+
+    <hr>
+
+    {% if nav == 2 %}
+        {% include 'admin.html.twig' %}
+
+    {% elseif nav== 1 %}
+        {% include 'user.html.twig' %}
+
+    {% endif %}
+
+
+    {% block main %}
+
+    {% endblock %}
+
+    {% include 'footer.html.twig' %}
+</body>
+</html>

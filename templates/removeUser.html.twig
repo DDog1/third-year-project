@@ -1,0 +1,24 @@
+{% extends '_base.html.twig' %}
+{% block main %}
+
+<div id="input_left">
+    <h1>Remove User</h1>
+
+    <form
+            action="/processRemoveUser"
+            method="post"
+    >
+
+        <label for="id">id:</label>
+        <input type="text" name="id" autofocus>
+        <br>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+
+    </form>
+</div>
+    <div id="display_right">
+{% include 'userList.html.twig' %}
+    </div>
+{% endblock %}
