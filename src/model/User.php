@@ -15,6 +15,7 @@ class User extends DatabaseTable
     private $role;
 
     /**
+     * Return the id of the user
      * @return mixed
      */
     public function getId()
