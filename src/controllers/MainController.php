@@ -240,13 +240,18 @@ class MainController
     {
         $user = Model\User::getOneByUsername($username);
         $role=0;
+        $currentUser = "not logged in";
         if(isset($_SESSION['role'])) {
             $role=$_SESSION['role'];
+        }
+        if(isset($_SESSION['username'])) {
+            $currentUser = $_SESSION['username'];
         }
 
         $argsArray = [
             'nav' => $role,
             'user' => $user,
+            'currentUser' => $currentUser
         ];
 
         $templateName = 'profile';
@@ -290,9 +295,15 @@ class MainController
         if(isset($_SESSION['username'])) {
             $user = Model\User::getOneByUsername($_SESSION['username']);
 
+            $currentUser = "not logged in";
+            if(isset($_SESSION['username'])) {
+                $currentUser = $_SESSION['username'];
+            }
+
             $argsArray = [
                 'nav' => $_SESSION['role'],
-                'user' => $user
+                'user' => $user,
+                'currentUser' => $currentUser
             ];
 
             $templateName = 'profile';
