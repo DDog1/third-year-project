@@ -295,6 +295,23 @@ class MainController
         $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
         $image = filter_input(INPUT_POST, 'image', FILTER_SANITIZE_STRING);
 
+
+        /*$image=$_FILES['image']['name'];
+
+        $file_name = $_SESSION['username']; // New unique file name
+
+        if (move_uploaded_file($_FILES['image']['name'], "NewImages/{$file_name}.jpg"))
+        {
+            echo "The file " . basename($_FILES['image']['name']) .
+                " has been uploaded";
+        }
+        else
+        {
+            echo "There was an error uploading the file, please try again!";
+        }*/
+
+
+
         $argsArray = [
             'nav' => $_SESSION['role'],
             'user' => $user
