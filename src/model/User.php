@@ -1,17 +1,44 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: Darren Cosgrave
+ * Date: 27/04/2016
+ * Time: 15:13
+ */
+
 namespace Itb\model;
 
 use Mattsmithdev\PdoCrud\DatabaseTable;
 use Mattsmithdev\PdoCrud\DatabaseManager;
 
+/**
+ * Class User
+ * @package Itb\model
+ */
 class User extends DatabaseTable
 {
     const ROLE_USER = 1;
     const ROLE_ADMIN = 2;
 
+    /**
+     * The id of the user
+     * @var int
+     */
     private $id;
+    /**
+     * The username of the user
+     * @var string
+     */
     private $username;
+    /**
+     * The password of the user
+     * @var mixed
+     */
     private $password;
+    /**
+     * The role of the user
+     * @var int
+     */
     private $role;
 
     /**
@@ -33,6 +60,7 @@ class User extends DatabaseTable
     }
 
     /**
+     * Return the name of the user
      * @return mixed
      */
     public function getUsername()
@@ -41,6 +69,7 @@ class User extends DatabaseTable
     }
 
     /**
+     * Set the name of the user
      * @param mixed $username
      */
     public function setUsername($username)
@@ -49,6 +78,7 @@ class User extends DatabaseTable
     }
 
     /**
+     * Return the password for the user
      * @return mixed
      */
     public function getPassword()
@@ -57,6 +87,7 @@ class User extends DatabaseTable
     }
 
     /**
+     * Return the role of the user
      * @return mixed
      */
     public function getRole()
@@ -65,6 +96,7 @@ class User extends DatabaseTable
     }
 
     /**
+     * Set the role of the user
      * @param mixed $role
      */
     public function setRole($role)

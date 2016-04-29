@@ -1,9 +1,6 @@
 <?php
 /**
- * Created by PhpStorm.
  * User: Darren Cosgrave
- * Date: 07/04/2016
- * Time: 13:34
  */
 
 namespace Itb\Controller;
@@ -12,6 +9,10 @@ use Itb\Model;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 
+/**
+ * Class MainController
+ * @package Itb\Controller
+ */
 class MainController
 {
     /**
@@ -262,6 +263,13 @@ class MainController
 //**********************************************************************************************
 
 
+    /**
+     * Used to print out a form for a user to change there details on there homepage
+     * @param Request $request
+     * @param Application $app
+     * @param $username
+     * @return mixed
+     */
     public function showUserProfileEdit(Request $request, Application $app, $username)
     {
         $user = Model\User::getOneByUsername($username);
@@ -275,6 +283,12 @@ class MainController
         return $app['twig']->render($templateName . '.html.twig', $argsArray);
     }
 
+    /**
+     * Used to process user changes to there homepage
+     * @param Request $request
+     * @param Application $app
+     * @return mixed
+     */
     public function processUserEdit(Request $request, Application $app)
     {
         $user = Model\User::getOneByUsername($_SESSION['username']);
@@ -290,6 +304,12 @@ class MainController
         return $app['twig']->render($templateName . '.html.twig', $argsArray);
     }
 
+    /**
+     * Used to print out the current user logged in homepage
+     * @param Request $request
+     * @param Application $app
+     * @return mixed
+     */
     public function userProfile(Request $request, Application $app)
     {
         if(isset($_SESSION['username'])) {

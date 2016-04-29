@@ -1,15 +1,16 @@
 <?php
 /**
- * Created by PhpStorm.
  * User: Darren Cosgrave
- * Date: 30/03/2016
- * Time: 16:39
  */
 
 namespace Itb\model;
 
 use Mattsmithdev\PdoCrud\DatabaseTable;
 
+/**
+ * Class Action
+ * @package Itb\model
+ */
 class Action extends DatabaseTable
 {
     private $id;
@@ -19,6 +20,7 @@ class Action extends DatabaseTable
     private $status;
 
     /**
+     *
      * @return mixed
      */
     public function getId()
