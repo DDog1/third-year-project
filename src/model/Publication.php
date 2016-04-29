@@ -10,14 +10,35 @@ namespace Itb\model;
 
 use Mattsmithdev\PdoCrud\DatabaseTable;
 
+/**
+ * Class Publication
+ * @package Itb\model
+ */
 class Publication extends DatabaseTable
 {
+    /**
+     * the id of the publication
+     * @var int
+     */
     private $id;
+    /**
+     * the title of the publication
+     * @var string
+     */
     private $title;
+    /**
+     * the author id of the publication
+     * @var int
+     */
     private $authorId;
+    /**
+     * the url for the publication
+     * @var string
+     */
     private $url;
 
     /**
+     * gets the id of publication
      * @return mixed
      */
     public function getId()
@@ -26,6 +47,7 @@ class Publication extends DatabaseTable
     }
 
     /**
+     * sets the id of publication
      * @param mixed $id
      */
     public function setId($id)
@@ -34,6 +56,7 @@ class Publication extends DatabaseTable
     }
 
     /**
+     * get the title of publication
      * @return mixed
      */
     public function getTitle()
@@ -42,6 +65,7 @@ class Publication extends DatabaseTable
     }
 
     /**
+     * set the title of publication
      * @param mixed $title
      */
     public function setTitle($title)
@@ -50,6 +74,7 @@ class Publication extends DatabaseTable
     }
 
     /**
+     * get the author id of the publication
      * @return mixed
      */
     public function getAuthorId()
@@ -58,6 +83,7 @@ class Publication extends DatabaseTable
     }
 
     /**
+     * set the author id of the publication
      * @param mixed $authorId
      */
     public function setAuthorId($authorId)
@@ -66,6 +92,7 @@ class Publication extends DatabaseTable
     }
 
     /**
+     * get the url link to publication
      * @return mixed
      */
     public function getUrl()
@@ -74,6 +101,7 @@ class Publication extends DatabaseTable
     }
 
     /**
+     * set the url link to publication
      * @param mixed $url
      */
     public function setUrl($url)

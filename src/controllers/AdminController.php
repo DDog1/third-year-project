@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Admin controller used for doing CRUD
+ */
 namespace Itb\Controller;
 
 use Itb\Model;
