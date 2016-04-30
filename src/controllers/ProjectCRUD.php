@@ -29,6 +29,13 @@ class ProjectCRUD
         return $projects;
     }
 
+    /**
+     * This method will display the add project function,
+     * will give error if not logged in as admin
+     * @param Request $request
+     * @param Application $app
+     * @return mixed
+     */
     public function addProject(Request $request, Application $app)
     {
         if (isset($_SESSION['role'])) {
@@ -51,6 +58,12 @@ class ProjectCRUD
         return $app['twig']->render($templateName . '.html.twig', $argsArray);
     }
 
+    /**
+     * Lets the users add a new project to the database
+     * @param Request $request
+     * @param Application $app
+     * @return mixed
+     */
     public function processAddProject(Request $request, Application $app)
     {
         $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING);
@@ -78,6 +91,13 @@ class ProjectCRUD
 
     }
 
+    /**
+     * This method will display the remove project function,
+     * will give error if not logged in as admin
+     * @param Request $request
+     * @param Application $app
+     * @return mixed
+     */
     public function removeProject(Request $request, Application $app)
     {
         if (isset($_SESSION['role'])) {
@@ -100,6 +120,12 @@ class ProjectCRUD
         return $app['twig']->render($templateName . '.html.twig', $argsArray);
     }
 
+    /**
+     * Lets the users remove a project to the database
+     * @param Request $request
+     * @param Application $app
+     * @return mixed
+     */
     public function processRemoveProject(Request $request, Application $app)
     {
         $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_STRING);
@@ -143,6 +169,13 @@ class ProjectCRUD
         }
     }
 
+    /**
+     * This method will display the update project function,
+     * will give error if not logged in as admin
+     * @param Request $request
+     * @param Application $app
+     * @return mixed
+     */
     public function updateProject(Request $request, Application $app)
     {
         if (isset($_SESSION['role'])) {
@@ -165,6 +198,12 @@ class ProjectCRUD
         return $app['twig']->render($templateName . '.html.twig', $argsArray);
     }
 
+    /**
+     * Lets the users update a project to the database
+     * @param Request $request
+     * @param Application $app
+     * @return mixed
+     */
     public function processUpdateProject(Request $request, Application $app)
     {
         $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_STRING);

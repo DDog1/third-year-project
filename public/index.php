@@ -32,35 +32,34 @@ $app->post('/processUpdateUser', 'Itb\Controller\AdminController::processUpdateU
 
 // Admin CRUD
 // Admin add list
-$app->get('/addAction', 'Itb\Controller\AdminController::addAction');
-$app->post('/processAddAction', 'Itb\Controller\AdminController::processAddAction');
+$app->get('/addAction', 'Itb\Controller\ListCRUD::addAction');
+$app->post('/processAddAction', 'Itb\Controller\ListCRUD::processAddAction');
 // Admin remove list
-$app->get('/removeAction', 'Itb\Controller\AdminController::removeAction');
-$app->post('/processRemoveAction', 'Itb\Controller\AdminController::processRemoveAction');
+$app->get('/removeAction', 'Itb\Controller\ListCRUD::removeAction');
+$app->post('/processRemoveAction', 'Itb\Controller\ListCRUD::processRemoveAction');
 // Admin update list
-$app->get('/updateAction', 'Itb\Controller\AdminController::updateAction');
-$app->post('/processUpdateAction', 'Itb\Controller\AdminController::processUpdateAction');
+$app->get('/updateAction', 'Itb\Controller\ListCRUD::updateAction');
+$app->post('/processUpdateAction', 'Itb\Controller\ListCRUD::processUpdateAction');
 
 // Admin CRUD
 // Admin add publication
-$app->get('/addPublication', 'Itb\Controller\AdminController::addPublication');
-$app->post('/processAddPublication', 'Itb\Controller\AdminController::processAddPublication');
+$app->get('/addPublication', 'Itb\Controller\PublicationCRUD::addPublication');
+$app->post('/processAddPublication', 'Itb\Controller\PublicationCRUD::processAddPublication');
 // Admin remove publication
-$app->get('/removePublication', 'Itb\Controller\AdminController::removePublication');
-$app->post('/processRemovePublication', 'Itb\Controller\AdminController::processRemovePublication');
+$app->get('/removePublication', 'Itb\Controller\PublicationCRUD::removePublication');
+$app->post('/processRemovePublication', 'Itb\Controller\PublicationCRUD::processRemovePublication');
 // Admin update publication
-$app->get('/updatePublication', 'Itb\Controller\AdminController::updatePublication');
-$app->post('/processUpdatePublication', 'Itb\Controller\AdminController::processUpdatePublication');
+$app->get('/updatePublication', 'Itb\Controller\PublicationCRUD::updatePublication');
+$app->post('/processUpdatePublication', 'Itb\Controller\PublicationCRUD::processUpdatePublication');
 
-
-
-
+// Admin CRUD
+// Admin add project
 $app->get('/addProject', 'Itb\Controller\ProjectCRUD::addProject');
 $app->post('/processAddProject', 'Itb\Controller\ProjectCRUD::processAddProject');
-
+// Admin remove project
 $app->get('/removeProject', 'Itb\Controller\ProjectCRUD::removeProject');
 $app->post('/processRemoveProject', 'Itb\Controller\ProjectCRUD::processRemoveProject');
-
+// Admin update project
 $app->get('/updateProject', 'Itb\Controller\ProjectCRUD::updateProject');
 $app->post('/processUpdateProject', 'Itb\Controller\ProjectCRUD::processUpdateProject');
 
