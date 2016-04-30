@@ -73,7 +73,7 @@ class userTest extends \PHPUnit_Framework_TestCase
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
-
+/*
     public function testCanFindMatchingUsernameAndPassword()
     {
         $this->dbConfig();
@@ -129,4 +129,5 @@ class userTest extends \PHPUnit_Framework_TestCase
         // Assert
         $this->assertNull($result);
     }
+*/
 }
