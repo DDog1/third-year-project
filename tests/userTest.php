@@ -10,6 +10,13 @@ namespace Itb;
 
 class userTest extends \PHPUnit_Framework_TestCase
 {
+    public function dbConfig()
+    {
+        define('DB_HOST', 'localhost');
+        define('DB_USER', 'Darren');
+        define('DB_PASS', 'Play_room123');
+        define('DB_NAME', 'graphicsgaminggroup');
+    }
     public function testGetUserId()
     {
         // Arrange
@@ -66,48 +73,60 @@ class userTest extends \PHPUnit_Framework_TestCase
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
-/*
+
     public function testCanFindMatchingUsernameAndPassword()
+    {
+        $this->dbConfig();
+        // Arrange
+        $user = new Model\User();
+        $user->setId(1);
+        $user->setUsername("matt");
+        $user->setPassword("smith");
+        $user->setRole(1);
+
+        // Act
+        $result = $user->canFindMatchingUsernameAndPassword("matt", "smith");
+
+        // Assert
+        $this->assertTrue($result);
+    }
+
+    public function testCantFindMatchingUsernameAndPassword()
     {
         // Arrange
         $user = new Model\User();
-        $user->setUsername("Darren");
-        $user->setPassword("Darren123");
-        $expectedResult = 1;
 
         // Act
-        $result = $user->canFindMatchingUsernameAndPassword("Darren", "Darren123");
+        $result = $user->canFindMatchingUsernameAndPassword("Darren", "Cosgrave");
 
         // Assert
-        $this->assertTrue($expectedResult, $result);
+        $this->assertFalse($result);
     }
 
     public function testCanFindMatchingUsernameAndRole()
     {
         // Arrange
         $user = new Model\User();
-        $user->setUsername("Darren");
+        $user->setUsername("matt");
         $user->setRole(1);
         $expectedResult = 1;
 
         // Act
-        $result = $user->canFindMatchingUsernameAndRole("Darren");
+        $result = $user->canFindMatchingUsernameAndRole("matt");
 
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
 
-    public function testGetOneByUsername()
+    public function testCantFindMatchingUsernameAndRole()
     {
         // Arrange
         $user = new Model\User();
-        $user->setUsername("Darren");
-        $expectedResult = 1;
 
         // Act
-        $result = $user->getOneByUsername("Darren");
+        $result = $user->canFindMatchingUsernameAndRole("Darren");
 
         // Assert
-        $this->assertEquals($expectedResult, $result);
-    }*/
+        $this->assertNull($result);
+    }
 }

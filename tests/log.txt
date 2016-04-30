@@ -5,12 +5,22 @@ ok 3 - Itb\actionTest::testGetDescription
 ok 4 - Itb\actionTest::testGetImplementorId
 ok 5 - Itb\actionTest::testGetDeadLine
 ok 6 - Itb\actionTest::testGetStatus
-ok 7 - Itb\publicationTest::testGetId
-ok 8 - Itb\publicationTest::testGetTitle
-ok 9 - Itb\publicationTest::testGetAuthorId
-ok 10 - Itb\publicationTest::testGetUrl
-ok 11 - Itb\userTest::testGetUserId
-ok 12 - Itb\userTest::testGetUsername
-ok 13 - Itb\userTest::testGetPassword
-ok 14 - Itb\userTest::testGetRole
-1..14
+ok 7 - Itb\projectTest::testGetId
+ok 8 - Itb\projectTest::testGetTitle
+ok 9 - Itb\projectTest::testGetDiscription
+ok 10 - Itb\projectTest::testGetMembers
+ok 11 - Itb\projectTest::testGetSupervisor
+ok 12 - Itb\projectTest::testGetDeadline
+ok 13 - Itb\publicationTest::testGetId
+ok 14 - Itb\publicationTest::testGetTitle
+ok 15 - Itb\publicationTest::testGetAuthorId
+ok 16 - Itb\publicationTest::testGetUrl
+ok 17 - Itb\userTest::testGetUserId
+ok 18 - Itb\userTest::testGetUsername
+ok 19 - Itb\userTest::testGetPassword
+ok 20 - Itb\userTest::testGetRole
+ok 21 - Itb\userTest::testCanFindMatchingUsernameAndPassword
+ok 22 - Itb\userTest::testCantFindMatchingUsernameAndPassword
+ok 23 - Itb\userTest::testCanFindMatchingUsernameAndRole
+ok 24 - Itb\userTest::testCantFindMatchingUsernameAndRole
+1..24

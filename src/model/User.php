@@ -1,10 +1,7 @@
 <?php
 /**
- * Created by PhpStorm.
  * User: Darren Cosgrave
- * Date: 27/04/2016
- * Time: 15:13
- */
+*/
 
 namespace Itb\model;
 
@@ -19,6 +16,7 @@ class User extends DatabaseTable
 {
     const ROLE_USER = 1;
     const ROLE_ADMIN = 2;
+    const ROLE_SUPERVISOR = 3;
 
     /**
      * The id of the user
@@ -174,7 +172,7 @@ class User extends DatabaseTable
         if ($object = $statement->fetch()) {
             return $object;
         } else {
-            return null;
+            return false;
         }
     }
 }

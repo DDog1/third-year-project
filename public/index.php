@@ -17,6 +17,7 @@ $app->get('/homepage', 'Itb\Controller\MainController::userProfile');
 $app->get('/listUsers', 'Itb\Controller\MainController::listUsers');
 $app->get('/listActions', 'Itb\Controller\MainController::listActions');
 $app->get('/listPublications', 'Itb\Controller\MainController::listPublications');
+$app->get('/listProjects', 'Itb\Controller\MainController::listProjects');
 
 // Admin CRUD
 // Admin add user

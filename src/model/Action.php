@@ -13,14 +13,34 @@ use Mattsmithdev\PdoCrud\DatabaseTable;
  */
 class Action extends DatabaseTable
 {
+    /**
+     * the id of the list
+     * @var int
+     */
     private $id;
+    /**
+     * the description of the list
+     * @var string
+     */
     private $description;
+    /**
+     * the implementor id for the list
+     * @var int
+     */
     private $implementorid;
+    /**
+     * the deadline for the list
+     * @var mixed
+     */
     private $deadline;
+    /**
+     * the status of the list
+     * @var int
+     */
     private $status;
 
     /**
-     *
+     * gets the id of the list
      * @return mixed
      */
     public function getId()
@@ -29,6 +49,7 @@ class Action extends DatabaseTable
     }
 
     /**
+     * sets the id of the list
      * @param mixed $id
      */
     public function setId($id)
@@ -37,6 +58,7 @@ class Action extends DatabaseTable
     }
 
     /**
+     * gets the description of the list
      * @return mixed
      */
     public function getDescription()
@@ -45,6 +67,7 @@ class Action extends DatabaseTable
     }
 
     /**
+     * sets the description of the list
      * @param mixed $description
      */
     public function setDescription($description)
@@ -53,6 +76,7 @@ class Action extends DatabaseTable
     }
 
     /**
+     * gets the implementor id of the list
      * @return mixed
      */
     public function getImplementorid()
@@ -61,6 +85,7 @@ class Action extends DatabaseTable
     }
 
     /**
+     * sets the implementor id of the list
      * @param mixed $implementorid
      */
     public function setImplementorid($implementorid)
@@ -69,6 +94,7 @@ class Action extends DatabaseTable
     }
 
     /**
+     * gets the deadline of the list
      * @return mixed
      */
     public function getDeadline()
@@ -77,6 +103,7 @@ class Action extends DatabaseTable
     }
 
     /**
+     * sets the deadline of the list
      * @param mixed $deadline
      */
     public function setDeadline($deadline)
@@ -85,6 +112,7 @@ class Action extends DatabaseTable
     }
 
     /**
+     * gets the status of the list
      * @return mixed
      */
     public function getStatus()
@@ -93,6 +121,7 @@ class Action extends DatabaseTable
     }
 
     /**
+     * sets the status of the list
      * @param mixed $status
      */
     public function setStatus($status)

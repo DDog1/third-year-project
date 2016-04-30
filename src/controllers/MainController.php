@@ -10,6 +10,7 @@ use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
+ * The MainController will look after login, logout, register, list actions and showing the user profile
  * Class MainController
  * @package Itb\Controller
  */
@@ -160,6 +161,24 @@ class MainController
         ];
 
         $templateName = 'listPublications';
+        return $app['twig']->render($templateName . '.html.twig', $argsArray);
+    }
+
+    /**
+     * Used to print out list of projects
+     * @param Request $request
+     * @param Application $app
+     * @return mixed
+     */
+    public function listProjects(Request $request, Application $app)
+    {
+        $projects = Model\Project::getAll();
+        $argsArray = [
+            'projects' =>$projects,
+            'nav' =>$_SESSION["role"]
+        ];
+
+        $templateName = 'listProjects';
         return $app['twig']->render($templateName . '.html.twig', $argsArray);
     }
 

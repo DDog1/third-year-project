@@ -49,13 +49,24 @@ class AdminController
     }
 
     /**
+     * This method will return an array of projects from the database
+     * @return array
+     */
+    public function displayProjects()
+    {
+        $projects = Model\Project::getAll();
+
+        return $projects;
+    }
+
+    /**
      * This method will display the admin add function,
      * will give error if not logged in as admin
      * @param Request $request
      * @param Application $app
      * @return mixed
      */
-    public function addUser(Request $request, Application $app)
+    public function addUser(Request $request, Application $app)//Only the admin can use this method
     {
         if (isset($_SESSION['role'])) {
             if ($_SESSION['role'] == 2) {
@@ -140,7 +151,7 @@ class AdminController
      * @param Application $app
      * @return mixed
      */
-    public function removeUser(Request $request, Application $app)
+    public function removeUser(Request $request, Application $app)//Only the admin can use this method
     {
         if (isset($_SESSION['role'])) {
             if ($_SESSION['role']==2) {
@@ -221,7 +232,7 @@ class AdminController
      * @param Application $app
      * @return mixed
      */
-    public function updateUser(Request $request, Application $app)
+    public function updateUser(Request $request, Application $app)//Only the admin can use this method
     {
         if (isset($_SESSION['role'])) {
             if ($_SESSION['role']==2) {
@@ -895,4 +906,6 @@ class AdminController
             return $app['twig']->render($templateName . '.html.twig', $argsArray);
         }
     }
+
+
 }
