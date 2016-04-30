@@ -49,5 +49,15 @@
 
     {% elseif errorType == "updatePublication" %}
         <a href="/updatePublication">Back to update publication</a>
+
+    {# Error links back to publication CRUD#}
+    {% elseif errorType == "addProject" %}
+        <a href="/addProject">Back to add project</a>
+
+    {% elseif errorType == "removeProject" %}
+        <a href="/removeProject">Back to remove project</a>
+
+    {% elseif errorType == "updateProject"%}
+        <a href="/updateProject">Back to update project</a>
     {% endif %}
 {% endblock %}

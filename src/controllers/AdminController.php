@@ -49,17 +49,6 @@ class AdminController
     }
 
     /**
-     * This method will return an array of projects from the database
-     * @return array
-     */
-    public function displayProjects()
-    {
-        $projects = Model\Project::getAll();
-
-        return $projects;
-    }
-
-    /**
      * This method will display the admin add function,
      * will give error if not logged in as admin
      * @param Request $request

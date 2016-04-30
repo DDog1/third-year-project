@@ -1,0 +1,43 @@
+{% extends '_base.html.twig' %}
+{% block main %}
+
+    <div id="input_left" style="width: 30%;">
+        <h1>Update Project</h1>
+
+        <form
+                action="/processUpdateProject"
+                method="post"
+        >
+            <label for="id">id:</label>
+            <input type="text" title="id" name="id" autofocus>
+            <br>
+
+            <label for="title" class="space">title:</label>
+            <input type="text" title="title" name="title">
+            <br>
+
+            <label for="description" class="space">description:</label>
+            <input type="text" title="description" name="description">
+            <br>
+
+            <label for="members" class="space">members:</label>
+            <input type="text" title="members" name="members">
+            <br>
+
+            <label for="supervisor" class="space">supervisor:</label>
+            <input type="text" title="supervisor" name="supervisor">
+            <br>
+
+            <label for="deadline" class="space">deadline:</label>
+            <input type="date" title="deadline" name="deadline">
+            <br>
+
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+
+        </form>
+    </div>
+    <div id="display_right" style="width: 70%;">
+        {% include 'projectList.html.twig' %}
+    </div>
+{% endblock %}

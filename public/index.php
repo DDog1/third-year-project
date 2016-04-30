@@ -54,9 +54,16 @@ $app->post('/processUpdatePublication', 'Itb\Controller\AdminController::process
 
 
 
-/*$app->get('/list', 'Itb\Controller\MainController::listAction');
-$app->get('/show/{id}', 'Itb\Controller\MainController::showAction');
-$app->get('/show/', 'Itb\Controller\MainController::showMissingIsbnAction');*/
+
+$app->get('/addProject', 'Itb\Controller\ProjectCRUD::addProject');
+$app->post('/processAddProject', 'Itb\Controller\ProjectCRUD::processAddProject');
+
+$app->get('/removeProject', 'Itb\Controller\ProjectCRUD::removeProject');
+$app->post('/processRemoveProject', 'Itb\Controller\ProjectCRUD::processRemoveProject');
+
+$app->get('/updateProject', 'Itb\Controller\ProjectCRUD::updateProject');
+$app->post('/processUpdateProject', 'Itb\Controller\ProjectCRUD::processUpdateProject');
+
 
 $app->error(function (\Exception $e, $code) use ($app) {
     $errorController = new Itb\Controller\ErrorController();

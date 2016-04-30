@@ -34,5 +34,14 @@
     {% elseif successType == "update Publication" %}
         <a href="/updatePublication">Update another publication?</a>
 
+    {# Success links back to project CRUD#}
+    {% elseif successType == "add Project" %}
+        <a href="/addProject">Add another project?</a>
+
+    {% elseif successType == "remove Project" %}
+        <a href="/removeProject">Add another project?</a>
+
+    {% elseif successType == "update Project" %}
+        <a href="/updateProject">Update another project?</a>
     {%  endif %}
 {% endblock %}
