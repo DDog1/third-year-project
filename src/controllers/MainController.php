@@ -6,6 +6,7 @@
 namespace Itb\Controller;
 
 use Itb\Model;
+use Itb\model\User;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -224,6 +225,7 @@ class MainController
         // action depending on login success
         if ($isLoggedIn) {
             $_SESSION["username"]=$username;
+            $_SESSION["password"]=$password;
             $_SESSION["isLoggedIn"]=$isLoggedIn;
             $_SESSION["role"]=$isRole;
             $_SESSION['hasLoggedIn']="yes";
@@ -314,8 +316,18 @@ class MainController
         $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
         $image = filter_input(INPUT_POST, 'image', FILTER_SANITIZE_STRING);
 
+/*
+        $user = new User();
+        $user->setId($id);
+        $user->setUsername($_SESSION["username"]);
+        $user->setPassword($_SESSION["password"]);
+        $user->setRole($_SESSION["role"]);
+        $user->setDescription($description);
+        User::update($user);
+*/
 
-        /*$image=$_FILES['image']['name'];
+/*
+        $image=$_FILES['image']['name'];
 
         $file_name = $_SESSION['username']; // New unique file name
 
@@ -327,9 +339,8 @@ class MainController
         else
         {
             echo "There was an error uploading the file, please try again!";
-        }*/
-
-
+        }
+*/
 
         $argsArray = [
             'nav' => $_SESSION['role'],
