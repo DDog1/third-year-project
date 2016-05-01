@@ -23,7 +23,19 @@ class actionTest extends \PHPUnit_Framework_TestCase
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
-    
+
+    public function testGetWrongId()
+    {
+        // Arrange
+        $action = new Model\Action();
+
+        // Act
+        $result = $action->getId();
+
+        // Assert
+        $this->assertNull($result);
+    }
+
     public function testGetDescription()
     {
         // Arrange
@@ -36,6 +48,18 @@ class actionTest extends \PHPUnit_Framework_TestCase
 
         // Assert
         $this->assertEquals($expectedResult, $result);
+    }
+
+    public function testGetWrongDescription()
+    {
+        // Arrange
+        $action = new Model\Action();
+
+        // Act
+        $result = $action->getDescription();
+
+        // Assert
+        $this->assertNull($result);
     }
 
     public function testGetImplementorId()
@@ -52,6 +76,18 @@ class actionTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expectedResult, $result);
     }
 
+    public function testGetWrongImplementorId()
+    {
+        // Arrange
+        $action = new Model\Action();
+
+        // Act
+        $result = $action->getImplementorid();
+
+        // Assert
+        $this->assertNull($result);
+    }
+
     public function testGetDeadLine()
     {
         // Arrange
@@ -66,6 +102,18 @@ class actionTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expectedResult, $result);
     }
 
+    public function testGetWrongDeadLine()
+    {
+        // Arrange
+        $action = new Model\Action();
+
+        // Act
+        $result = $action->getDeadline();
+
+        // Assert
+        $this->assertNull($result);
+    }
+
     public function testGetStatus()
     {
         // Arrange
@@ -78,5 +126,17 @@ class actionTest extends \PHPUnit_Framework_TestCase
 
         // Assert
         $this->assertEquals($expectedResult, $result);
+    }
+
+    public function testGetWrongStatus()
+    {
+        // Arrange
+        $action = new Model\Action();
+
+        // Act
+        $result = $action->getStatus();
+
+        // Assert
+        $this->assertNull($result);
     }
 }

@@ -15,7 +15,7 @@ class userTest extends \PHPUnit_Framework_TestCase
         define('DB_HOST', 'localhost');
         define('DB_USER', 'Darren');
         define('DB_PASS', 'Play_room123');
-        define('DB_NAME', 'graphicsgaminggroup');
+        define('DB_NAME', 'itb');
     }
     public function testGetUserId()
     {
