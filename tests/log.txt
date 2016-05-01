@@ -19,8 +19,4 @@ ok 17 - Itb\userTest::testGetUserId
 ok 18 - Itb\userTest::testGetUsername
 ok 19 - Itb\userTest::testGetPassword
 ok 20 - Itb\userTest::testGetRole
-ok 21 - Itb\userTest::testCanFindMatchingUsernameAndPassword
-ok 22 - Itb\userTest::testCantFindMatchingUsernameAndPassword
-ok 23 - Itb\userTest::testCanFindMatchingUsernameAndRole
-ok 24 - Itb\userTest::testCantFindMatchingUsernameAndRole
-1..24
+1..20

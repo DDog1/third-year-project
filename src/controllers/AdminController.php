@@ -4,7 +4,7 @@
  */
 namespace Itb\Controller;
 
-use Itb\Model;
+use Itb\Model\User;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -21,7 +21,7 @@ class AdminController
      */
     public function displayUsers()
     {
-        $users = Model\User::getAll();
+        $users = User::getAll();
 
         return $users;
     }
@@ -73,20 +73,45 @@ class AdminController
 
         if ($password == $retypePassword) {
             if ($username!=null) {
-                $user = new Model\User();
-                $user->setPassword($password);
-                $user->setUsername($username);
-                $user->setRole($role);
-                Model\User::insert($user);
+                if($role == 1 || $role == 2 || $role == 3) {
+                    $isOnDatabase = User::getOneByUsername($username);
+                    if($isOnDatabase != true) {
+                        $user = new User();
+                        $user->setPassword($password);
+                        $user->setUsername($username);
+                        $user->setRole($role);
+                        User::insert($user);
 
-                $argsArray = [
-                    'message' => "user has been added to the database :)",// Success message
-                    'nav' => $_SESSION["role"],
-                    'successType' => "add User"
-                ];
+                        $argsArray = [
+                            'message' => "user has been added to the database :)",// Success message
+                            'nav' => $_SESSION["role"],
+                            'successType' => "add User"
+                        ];
 
-                $templateName = 'process';
-                return $app['twig']->render($templateName . '.html.twig', $argsArray);
+                        $templateName = 'process';
+                        return $app['twig']->render($templateName . '.html.twig', $argsArray);
+                    } else {
+                        $argsArray = [
+                            'message' => "Error - Cant have more than one user with this name",// Error message
+                            'message2' => 'Please trying again :)',
+                            'errorType' => 'addUser',// Type of error used to give the right link back
+                            'nav' => $_SESSION["role"]
+                        ];
+
+                        $templateName = 'error';
+                        return $app['twig']->render($templateName . '.html.twig', $argsArray);
+                    }
+                } else {
+                    $argsArray = [
+                        'message' => "Error - Role must be 1 for user, 2 for admin or 3 for supervisor",// Error message
+                        'message2' => 'Please trying again :)',
+                        'errorType' => 'addUser',// Type of error used to give the right link back
+                        'nav' => $_SESSION["role"]
+                    ];
+
+                    $templateName = 'error';
+                    return $app['twig']->render($templateName . '.html.twig', $argsArray);
+                }
             } else {
                 $argsArray = [
                     'message' => "Error - Username not filled in",// Error message
@@ -154,11 +179,11 @@ class AdminController
         $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_STRING);
 
         if ($id!=null) {
-            $isOnDatabase = Model\User::getOneById($id);
+            $isOnDatabase = User::getOneById($id);
             if ($isOnDatabase!=null) {
-                $user = new Model\User();
+                $user = new User();
                 $user->setId($id);
-                Model\User::delete($id);
+                User::delete($id);
 
                 $argsArray = [
                     'message' => "User has been removed form the database",// Success message
@@ -240,21 +265,34 @@ class AdminController
             if ($password == $retypePassword) {
                 if ($username != null) {
                     if ($role == 1 || $role == 2) {
-                        $user = new Model\User();
-                        $user->setId($id);
-                        $user->setUsername($username);
-                        $user->setPassword($password);
-                        $user->setRole($role);
-                        Model\User::update($user);
+                        $isOnDatabase = User::getOneByUsername($username);
+                        if($isOnDatabase != true) {
+                            $user = new User();
+                            $user->setId($id);
+                            $user->setUsername($username);
+                            $user->setPassword($password);
+                            $user->setRole($role);
+                            User::update($user);
 
-                        $argsArray = [
-                            'message' => "User has been updated",// Success message
-                            'nav' => $_SESSION["role"],
-                            'successType' => "update User"
-                        ];
+                            $argsArray = [
+                                'message' => "User has been updated",// Success message
+                                'nav' => $_SESSION["role"],
+                                'successType' => "update User"
+                            ];
 
-                        $templateName = 'process';
-                        return $app['twig']->render($templateName . '.html.twig', $argsArray);
+                            $templateName = 'process';
+                            return $app['twig']->render($templateName . '.html.twig', $argsArray);
+                        } else {
+                            $argsArray = [
+                                'message' => "Error - Cant have more than one user with this name",// Error message
+                                'message2' => 'Please trying again :)',
+                                'errorType' => 'updateUser',// Type of error used to give the right link back
+                                'nav' => $_SESSION["role"]
+                            ];
+
+                            $templateName = 'error';
+                            return $app['twig']->render($templateName . '.html.twig', $argsArray);
+                        }
                     } else {
                         $argsArray = [
                         'message' => "Error - Role must be a number",// Error message
