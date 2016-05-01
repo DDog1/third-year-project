@@ -119,10 +119,15 @@ class MainController
      */
     public function listUsers(Request $request, Application $app)
     {
+        $role = 0;
+        if (isset($_SESSION['role'])) {
+            $role = $_SESSION['role'];
+        }
+
         $users = Model\User::getAll();
         $argsArray = [
             'users' =>$users,
-            'nav' =>$_SESSION["role"]
+            'nav' =>$role
         ];
 
         $templateName = 'listUsers';
@@ -137,10 +142,15 @@ class MainController
      */
     public function listActions(Request $request, Application $app)
     {
+        $role = 0;
+        if (isset($_SESSION['role'])) {
+            $role = $_SESSION['role'];
+        }
+
         $actions = Model\Action::getAll();
         $argsArray = [
             'actions' =>$actions,
-            'nav' =>$_SESSION["role"]
+            'nav' =>$role
         ];
 
         $templateName = 'listActions';
@@ -155,10 +165,15 @@ class MainController
      */
     public function listPublications(Request $request, Application $app)
     {
+        $role = 0;
+        if (isset($_SESSION['role'])) {
+            $role = $_SESSION['role'];
+        }
+
         $publications = Model\Publication::getAll();
         $argsArray = [
             'publications' =>$publications,
-            'nav' =>$_SESSION["role"]
+            'nav' =>$role
         ];
 
         $templateName = 'listPublications';
@@ -173,10 +188,15 @@ class MainController
      */
     public function listProjects(Request $request, Application $app)
     {
+        $role = 0;
+        if (isset($_SESSION['role'])) {
+            $role = $_SESSION['role'];
+        }
+
         $projects = Model\Project::getAll();
         $argsArray = [
             'projects' =>$projects,
-            'nav' =>$_SESSION["role"]
+            'nav' =>$role
         ];
 
         $templateName = 'listProjects';
