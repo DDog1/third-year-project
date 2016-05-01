@@ -9,7 +9,7 @@
 
     <filter>
         <whitelist>
-            <directory>src</directory>
+            <directory>src/model</directory>
         </whitelist>
     </filter>
 
