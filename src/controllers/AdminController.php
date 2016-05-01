@@ -73,9 +73,9 @@ class AdminController
 
         if ($password == $retypePassword) {
             if ($username!=null) {
-                if($role == 1 || $role == 2 || $role == 3) {
+                if ($role == 1 || $role == 2 || $role == 3) {
                     $isOnDatabase = User::getOneByUsername($username);
-                    if($isOnDatabase != true) {
+                    if ($isOnDatabase != true) {
                         $user = new User();
                         $user->setPassword($password);
                         $user->setUsername($username);
@@ -266,7 +266,7 @@ class AdminController
                 if ($username != null) {
                     if ($role == 1 || $role == 2) {
                         $isOnDatabase = User::getOneByUsername($username);
-                        if($isOnDatabase != true) {
+                        if ($isOnDatabase != true) {
                             $user = new User();
                             $user->setId($id);
                             $user->setUsername($username);
@@ -338,6 +338,4 @@ class AdminController
             return $app['twig']->render($templateName . '.html.twig', $argsArray);
         }
     }
-
-
 }

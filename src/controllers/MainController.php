@@ -283,10 +283,10 @@ class MainController
         $user = Model\User::getOneByUsername($username);
         $role=0;
         $currentUser = "not logged in";
-        if(isset($_SESSION['role'])) {
+        if (isset($_SESSION['role'])) {
             $role=$_SESSION['role'];
         }
-        if(isset($_SESSION['username'])) {
+        if (isset($_SESSION['username'])) {
             $currentUser = $_SESSION['username'];
         }
 
@@ -379,11 +379,11 @@ class MainController
      */
     public function userProfile(Request $request, Application $app)
     {
-        if(isset($_SESSION['username'])) {
+        if (isset($_SESSION['username'])) {
             $user = Model\User::getOneByUsername($_SESSION['username']);
 
             $currentUser = "not logged in";
-            if(isset($_SESSION['username'])) {
+            if (isset($_SESSION['username'])) {
                 $currentUser = $_SESSION['username'];
             }
 
@@ -405,5 +405,4 @@ class MainController
         $templateName = 'error';
         return $app['twig']->render($templateName . '.html.twig', $argsArray);
     }
-
 }

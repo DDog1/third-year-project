@@ -88,7 +88,6 @@ class ProjectCRUD
 
         $templateName = 'process';
         return $app['twig']->render($templateName . '.html.twig', $argsArray);
-
     }
 
     /**
@@ -214,7 +213,7 @@ class ProjectCRUD
         $deadline = filter_input(INPUT_POST, 'deadline', FILTER_SANITIZE_STRING);
 
         $isOnDatabase = Project::getOneById($id);
-        if($isOnDatabase != null) {
+        if ($isOnDatabase != null) {
             $project = new Project();
             $project->setId($id);
             $project->setTitle($title);
@@ -233,15 +232,15 @@ class ProjectCRUD
             $templateName = 'process';
             return $app['twig']->render($templateName . '.html.twig', $argsArray);
         } else {
-        $argsArray = [
+            $argsArray = [
             'message' => "Error - There was no project with Id : " . $id,// Error message
             'message2' => 'Please trying again :)',
             'errorType' => 'updateProject',// Type of error used to give the right link back
             'nav' => $_SESSION["role"]
         ];
 
-        $templateName = 'error';
-        return $app['twig']->render($templateName . '.html.twig', $argsArray);
-    }
+            $templateName = 'error';
+            return $app['twig']->render($templateName . '.html.twig', $argsArray);
+        }
     }
 }

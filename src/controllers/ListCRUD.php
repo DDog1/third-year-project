@@ -307,5 +307,4 @@ class ListCRUD
             return $app['twig']->render($templateName . '.html.twig', $argsArray);
         }
     }
-
 }

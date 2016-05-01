@@ -323,5 +323,4 @@ class PublicationCRUD
             return $app['twig']->render($templateName . '.html.twig', $argsArray);
         }
     }
-
 }
